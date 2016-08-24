@@ -1,0 +1,60 @@
+import java.util.Scanner;
+
+public class Cs31HomeworkOne
+{
+	static Scanner userInput = new Scanner (System.in);
+	
+	public static void main(String[] args)
+	{
+		String personName;
+		double personAge;
+		String nameOfCity;
+		String nameOfCollege;
+		String nameOfProfession;
+		String nameOfPet;
+		
+		//Prompt user for his/her name
+		Scanner name = new Scanner(System.in);
+		System.out.println("What is your name? ");
+		personName = name.next();
+		
+		//prompt user for his or her age
+		Scanner age = new Scanner(System.in);
+		System.out.println("How old are you? ");
+		personAge = age.nextDouble();
+		
+		//prompt user for the city they live in
+		Scanner city = new Scanner(System.in);
+		System.out.println("What city do you live in? " );
+		nameOfCity = city.next();
+		
+		//prompt user for name of college
+		Scanner college = new Scanner (System.in);
+		System.out.println("What college do you attend? ");
+		nameOfCollege = college.next();
+		
+		//prompt user for profession
+		Scanner profession = new Scanner(System.in);
+		System.out.println("What is your desied profession ");
+		nameOfProfession = profession.next();
+		
+		//prompt user for a pet name
+		Scanner pet = new Scanner(System.in);
+		System.out.println("Enter the name of a pet ");
+		nameOfPet = pet.next();
+		
+		System.out.println("There once was a person named " + personName + 
+				" who lived in"	+nameOfCity+ ". At the age of, " 
+				+ personAge + personName + " went to college at " + nameOfCollege + personName + 
+				" graduated and went to work as a \n" + nameOfProfession + " Then, " + personName +
+				" adopted a pet named " + nameOfPet + " They both lived happily ever after.");
+		
+		
+		
+
+		
+	}
+	
+}
+
+	
