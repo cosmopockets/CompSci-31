@@ -23,7 +23,7 @@ public class Homeworktwo
 	public static void main(String[] args) {
 		
 		double personLbs;
-		double personHeight;
+		int personHeight;
 		double bmi;
 		
 		//Prompt the user for his or her weight in lbs
@@ -35,7 +35,7 @@ public class Homeworktwo
 		//Prompt the user to enter his or her height in inches
 		Scanner Height = new Scanner(System.in);
 		System.out.print("Enter your height in inches:");
-		personHeight = Height.nextDouble();
+		personHeight = Height.nextInt();
 		System.out.println("your height in inches is: " +personHeight);
 		
 		//Calculates the users BMI
@@ -49,6 +49,13 @@ public class Homeworktwo
 		 * if(bmi <18.5) "You are underweight"
 		 * if(bmi > 25) "You are considered over weight"
 		 */
+		 
+		 if(bmi < 18.5)
+		 	System.out.print("\n Your BMI is considered under weight ");
+		 if(bmi <= || bmi < 25)
+		 	System.out.print("\n You have an optimal Body Mass Index");
+		 if(bmi > 25)
+		 	System.out.print("\n Your current bmi is considered over weight");
 
 	}
 
