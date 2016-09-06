@@ -1,0 +1,29 @@
+
+public class Car {
+	
+	private int yearModel;
+	private String model;
+	private int speed;
+	
+	int accelerate = speed + 5;
+	int brake = speed - 5;
+	
+	public void carModel(String brand, int year)
+	{
+		model = brand;
+		year = yearModel; 
+	}
+	public void increaseSpeed()
+	{
+		accelerate = speed + 5;
+	}
+	public void decreaseSpeed()
+	{
+		brake = speed - 5;
+	}
+	
+	
+	
+	
+
+}
