@@ -1,0 +1,84 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class ColorFactory extends JFrame {
+
+	private JPanel Panel;
+	private JPanel Panel1;
+	private JPanel Panel2;
+	private JPanel Panel3;
+	private JLabel messageLabel;
+	private JButton redButton;
+	private JButton orangeButton;
+	private JButton yellowButton;
+	private JRadioButton green;
+	private JRadioButton blue;
+	private JRadioButton cyan;
+	private final int WINDOW_WIDTH = 500;
+	private final int WINDOW_HEIGHT = 300;
+
+	public ColorFactory() {
+		setTitle("Color Facotry");
+		setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		messageLabel = new JLabel("Top buttons change the panel and bottom radio buttons changes the text color");
+
+		Panel1 = new JPanel();
+		Panel2 = new JPanel();
+		Panel3 = new JPanel();
+
+		redButton = new JButton("Red");
+		orangeButton = new JButton("Orange");
+		yellowButton = new JButton("Yellow");
+
+		green = new JRadioButton("Green");
+		blue = new JRadioButton("Blue", true);
+		cyan = new JRadioButton("Cyan");
+
+		//redButton.addItemListener(new RedButtonListener());
+		//orangeButton.addItemListener(new OrangeButtonListener());
+		//yellowButton.addItemListener(new YellowButtonListener());
+		
+		Panel = new JPanel();
+		Panel2.add(messageLabel);
+		Panel1.add(redButton);
+		Panel1.add(orangeButton);
+		Panel1.add(yellowButton);
+
+		ButtonGroup group = new ButtonGroup();
+		group.add(green);
+		group.add(blue);
+		group.add(cyan);
+
+		buildPanel();
+
+		setVisible(true);
+
+	}
+
+	private void buildPanel() {
+
+		Panel1.add(redButton);
+		Panel1.add(orangeButton);
+		Panel1.add(yellowButton);
+		Panel2.add(messageLabel, BorderLayout.CENTER);
+		Panel3.add(green);
+		Panel3.add(blue);
+		Panel3.add(cyan);
+
+		add(Panel1, BorderLayout.NORTH);
+		add(Panel3, BorderLayout.SOUTH);
+		add(Panel2, BorderLayout.CENTER);
+
+	}
+
+	public static void main(String[] args) {
+
+		new ColorFactory();
+
+	}
+
+}
