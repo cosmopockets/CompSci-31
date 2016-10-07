@@ -1,0 +1,56 @@
+import java.util.*;
+import java.util.Scanner;
+
+public class Ship {
+
+	private String nameOfShip; // field for the name of ship
+	private String yearOfShip; // year for the ship was built
+
+	public String getShipName() {
+		return nameOfShip;
+	}
+
+	public String getShipYear() {
+		return yearOfShip;
+	}
+
+	public void setShip(String n) {
+		nameOfShip = n;
+	}
+
+	public void setYear(String y) {
+		yearOfShip = y;
+	}
+
+	@Override
+	public String toString() {
+
+		// toString that displays the ship name and year it was built
+		String str = "The name of the ship is: " + nameOfShip
+				+ "\n It was built in: " + yearOfShip;
+		return str;
+	}
+
+	public static void main(String[] args) {
+		
+		Scanner userInput = new Scanner(System.in);	
+		
+		Ship[] shipS = new Ship[2];		
+		
+		for(int i =0; i<shipS.length; i++) {
+			System.out.println("What is the name of the ship ");
+			n = userInput.next();
+			shipS[i] = new Ship();
+			shipS[i].setShip(" ");
+			shipS[i].setYear(" ");
+		}
+
+		for (int i = 0; i < shipS.length; i++) {
+			System.out.println(shipS[i].getShipName());
+			System.out.println(shipS[i].getShipYear());
+
+		}
+
+	}
+
+}
