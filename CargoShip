@@ -1,0 +1,24 @@
+public class CargoShip extends Ship {
+
+	private int cargoCapacityTons;
+
+	public int getCapacityInTons() {
+		return cargoCapacityTons;
+	}
+
+	public void setCapacity(int i) {
+		cargoCapacityTons = i;
+	}
+
+	@Override
+	public String toString() {
+		/*
+		 * toString method that overrides the toString method in the base class
+		 * It should only display the ship's name and the ship's cargo capacity
+		 */
+		String str = "The ships name is: " + getShipName()	+ " \nThe capacity of the ship is: " + cargoCapacityTons;
+
+		return str;
+	}
+
+}
