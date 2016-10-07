@@ -1,0 +1,22 @@
+public class CruiseShip extends Ship {
+
+	private int maxNumOfPassengers;
+	
+	public int getMaxNumPassengers() {
+		return maxNumOfPassengers;
+	}
+
+	public void setPassengers(int i) {
+		maxNumOfPassengers = i;
+	}
+
+	@Override
+	public String toString() {
+		// should only display CruiseShips name and max # of passengers
+		String str = "The name of the CruiseShip is: " + getShipName()	+ " \nThe maximum number of passengers allowed is: "
+				+ maxNumOfPassengers;
+		return str;
+
+	}
+
+}
