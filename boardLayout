@@ -1,0 +1,21 @@
+import javax.swing.*;
+public class boardLayout extends BattleShip {
+	final int WINDOW_WDTH = 500;
+	final int WINDOW_LENGTH = 500;
+	
+	JFrame window = new JFrame();
+	
+	//set the title window
+	setTitle("BattleShip Arena");
+	
+	//set the size of the window
+	setSize(WINDOW_WIDTH, WINDOW_LENGTH);
+	
+	//this makes it so when the close button is clicked the window closes
+	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
+	//displays the window
+	window.setVisible(true);
+	
+
+}
