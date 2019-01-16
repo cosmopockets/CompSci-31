@@ -1,0 +1,158 @@
+package lab13;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class NoteTaker extends JFrame {
+
+	public static final int WIDTH = 600;
+	public static final int HEIGHT = 300;
+	public static final int LINES = 13;
+	public static final int CHAR_PER_LINE = 45;
+	private JTextArea theText;
+	private JMenuBar mBar;
+	private JPanel textPanel;
+	private JMenu notesMenu;
+	
+	private JMenu viewMenu; 
+	private JMenu lafMenu; 
+	private JMenu sbMenu; 
+	private JScrollPane scrolledText;//scroll bars
+	private String note1 = "No Note 1.";
+	private String note2 = "No Note 2.";
+
+	public NoteTaker()	{
+
+	super("Note Taker");
+	setSize(WIDTH, HEIGHT);
+	setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
+
+	Container contentPane = getContentPane();
+	contentPane.setLayout(new BorderLayout());
+
+	createNotes();
+	createViews();
+
+	
+	mBar = new JMenuBar();
+	mBar.add(notesMenu);
+
+	setJMenuBar(mBar);
+	
+	textPanel = new JPanel();
+	textPanel.setBackground(Color.blue);
+	theText = new JTextArea(LINES, CHAR_PER_LINE);
+	theText.setBackground(Color.white);
+
+	textPanel.add(theText);
+	contentPane.add(textPanel, BorderLayout.CENTER);
+	}
+	
+
+	
+	public void createNotes()	{
+	notesMenu = new JMenu("Notes");
+	JMenuItem item;
+	
+	item = new JMenuItem("Save Note 1");
+	item.addActionListener(new MenuListener());
+	notesMenu.add(item);
+	
+	item = new JMenuItem("Save Note 2");
+	item.addActionListener(new MenuListener());
+	notesMenu.add(item);
+	
+	item = new JMenuItem("Open Note 1");
+	item.addActionListener(new MenuListener());
+	notesMenu.add(item);
+	
+	item = new JMenuItem("Open Note 2");
+	item.addActionListener(new MenuListener());
+	notesMenu.add(item);
+	
+	item = new JMenuItem("Clear");
+	item.addActionListener(new MenuListener());
+	notesMenu.add(item);
+	
+	item = new JMenuItem("Exit");
+	item.addActionListener(new MenuListener());
+	notesMenu.add(item);
+	
+	}
+	
+
+	public void createViews() {
+		
+		viewMenu = new JMenu("Views");
+		
+		createLookAndFeel();
+		lafMenu.addActionListener(new MenuListener());
+		viewMenu.add(lafMenu);
+		
+		createScrollBars();
+		sbMenu.addActionListener(new MenuListener());
+		viewMenu.add(sbMenu);
+	}
+	
+	public void createLookAndFeel(){
+		lafMenu = new JMenu("Metal");
+		JMenuItem item;
+		
+		item = new JMenuItem("Moltif");
+		item.addActionListener(new MenuListener());
+		lafMenu.add(item);
+		
+		item = new JMenuItem("Windows");
+		item.addActionListener(new MenuListener());
+		lafMenu.add(item);
+
+	}
+	
+	public void createScrollBars() {
+		sbMenu = new JMenu ("Scroll bars");
+		JMenuItem item;
+		
+		item = new JMenuItem("Never");
+		item.addActionListener(new MenuListener());
+		sbMenu.add(item);
+		
+		item = new JMenuItem("Always");
+		item.addActionListener(new MenuListener());
+		sbMenu.add(item);
+		
+		item = new JMenuItem("As Needed");
+		item.addActionListener(new MenuListener());
+		sbMenu.add(item);
+		
+	}
+	
+	
+	
+	private class MenuListener implements ActionListener {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+
+			String actionCommand = e.getActionCommand();
+			if (actionCommand.equals("Save Note 1"))
+				note1 = theText.getText();
+			else if (actionCommand.equals("Save Note 2"))
+				note2 = theText.getText();
+			else if (actionCommand.equals("Clear"))
+				theText.setText("");
+			else if (actionCommand.equals("Open Note 1"))
+				theText.setText(note1);
+			else if (actionCommand.equals("Open Note 2"))
+				theText.setText(note2);
+			else if (actionCommand.equals("Exit"))
+				System.exit(0);
+			else
+				theText.setText("Error in memo interface");
+		}
+	}
+
+	public static void main(String[] args) {
+		NoteTaker gui = new NoteTaker();
+		gui.setVisible(true);
+	}
+}
